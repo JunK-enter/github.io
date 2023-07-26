@@ -7,6 +7,10 @@
   <title>Website with Menu</title>
   <style>
     /* General Styles */
+    body {
+      background-color: lightgray;
+    }
+
     header {
       display: flex;
       flex-direction: column;
@@ -57,7 +61,11 @@
     }
 
     .section:not(:last-child) {
-      margin-right: 20px;
+    margin-right: 2%;
+    }
+
+    .block-option:not(:last-child) {
+    margin-right: 2%;
     }
      /* Custom styles for the image section */
      .section-image {
@@ -99,6 +107,88 @@
       padding: 10px 0;
     }
 
+    /* Dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #333;
+  text-align: left;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f9247a;
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+  }
+  
+  nav li {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 10px;
+  }
+
+  .section:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 2%;
+  }
+
+  .block-options {
+    flex-direction: column;
+  }
+  
+  .block-option {
+    padding: 10px;
+  }
+
+  .block-option:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 2%;
+  }
+}
+
+
+
   </style>
 </head>
 
@@ -109,7 +199,13 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="https://www.instagram.com/jmuinr6/?hl=ko" target="_blank">Contact</a></li>
+        <li class="dropdown">
+          <a href="#">Contact</a>
+          <div class="dropdown-menu">
+            <a href="https://www.instagram.com/jmuinr6/?hl=ko" target="_blank">Instagram</a>
+            <a href="mailto:junkim621edu@gmail.com">Email</a>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
