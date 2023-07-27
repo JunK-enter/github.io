@@ -1,0 +1,252 @@
+
+/* General Styles */
+body {
+  background-color: lightgray;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.hamburger {
+display: inline-block;
+cursor: pointer;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+right: 20px;
+font-size: 50px; 
+}
+
+
+.hamburger span {
+display: block;
+width: 30px;
+height: 4px;
+background-color: #333;
+margin-bottom: 6px;
+}
+
+.hamburger span:last-child {
+margin-bottom: 0;
+}
+
+
+/* Menu slide style */
+.menu-slide {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #808080;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.menu-slide a {
+  padding: 8px 8px 8px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #f7f5f5;
+  display: block;
+  transition: 0.3s;
+}
+
+.menu-slide a:hover {
+  color: #f9247a;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  cursor:pointer;
+}
+
+/* Custom styles for the main sections */
+main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.section {
+  flex: 1;
+  padding: 20px;
+  background-color: rgba(188, 190, 197, 0.2);
+}
+
+.section:not(:last-child) {
+  margin-right: 2%;
+}
+
+.block-option:not(:last-child) {
+  margin-right: 2%;
+}
+
+/* Custom styles for the image section */
+.section-image {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.section-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Custom styles for block options */
+.block-options {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.block-option {
+    flex: 0 0 30%; /* Update this line */
+    max-width: 30%; /* Update this line */
+    padding: 20px;
+    background-color: rgba(114, 117, 131, 0.6);
+    text-align: center;
+    border-radius: 15px;
+}
+
+.block-option:not(:last-child) {
+  margin-right: 20px;
+}
+
+.block-option a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .hamburger:before {
+    content: "☰";
+    font-size: 40px;
+  }
+  .menu-slide {
+    display: inline-block;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .section:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 2%;
+  }
+
+  .block-options {
+    flex-direction: column;
+  }
+
+  .block-option:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 2%;
+  }
+}
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+padding: 8px 8px 8px 16px;
+text-decoration: none;
+font-size: 18px;
+color: #333;
+display: block;
+}
+
+.dropdown-content a:hover {
+color: #f9247a;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.about-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  .about-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 20px;
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+    }
+  
+    .about-image {
+      max-width: 100%;
+      padding-right: 0;
+    }
+  
+    .about-text {
+      margin-top: 20px;
+    }
+  }
+  
+ .info strong {
+    font-weight: bold;
+}
