@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C++ Projects</title>
-    <!-- Link the styles.css file -->
     <link rel="stylesheet" href="styles.css">
     <style>
         .header-left {
@@ -18,7 +17,6 @@
             top: 50%;
             transform: translateY(-50%);
             right: 20px;
-            font-size: 50px; 
         }
 
         .bar1, .bar2, .bar3 {
@@ -35,46 +33,54 @@
             font-size: 36px;
             margin-left: 50px;
         }
-        .body{
-            height: 100%;
-            margin: 0;
-        }
-        .center-container {
-            display: flex;
-            justify-content: center
+         /* Font recommendations */
+        body {
+          font-family: 'Roboto', sans-serif;
         }
         
+        h1, h2, h3, h4, h5, h6 {
+          font-family: 'Lato', sans-serif;
+        }
+        
+        a {
+          font-family: 'Poppins', sans-serif;
+        }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <!-- Add Jun's portfolio and menu bar -->
-    <header>
-        <div class="header-left">
-            <div class="hamburger" onclick="toggleMenu()">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <h1 class="logo">Jun's Portfolio</h1>
-        </div>
-        <nav class="menu-slide" id="menuSlide">
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="main-container">
+      <!-- Add Jun's portfolio and menu bar -->
+      <header>
+          <div class="header-left">
+              <div class="hamburger" onclick="toggleMenu()">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+              </div>
+              <h1 class="logo">Jun's Portfolio</h1>
+          </div>
+          <nav class="menu-slide" id="menuSlide">
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+              <ul class="nav-links">
+                  <li><a href="index.html" class="transitions">Home</a></li>
+                  <li><a href="#">Projects</a></li>
+              </ul>
+          </nav>
+      </header>
 
-    <main>
-        <h1><br><strong>C++ 뿌시기</strong></h1>  
-        <!-- Add your Python content here -->
-    </main>
-            <div class="center-container">
-                <p>Under Construction</p>
-            </div>
+      <main>
 
+          <h1><br><strong>C++ 뿌시기</strong></h1>
+          <!-- Add your C++ content here -->
+      </main>
+    </div>
     <script>
         function toggleMenu() {
           var menu = document.getElementById("menuSlide");
@@ -84,6 +90,22 @@
             menu.style.width = "250px";
           }
         }
+
+        // Add smooth page transition JavaScript handler
+        $(document).ready(function () {
+          $('#main-container').css('opacity', 1);
+
+          $('.transitions').click(function (event) {
+            event.preventDefault();
+            var link = $(this).attr('href');
+
+            $('#main-container').css('opacity', 0);
+
+            setTimeout(function () {
+              window.location.href = link;
+            }, 500);
+          });
+        });
     </script>
 </body>
 </html>
