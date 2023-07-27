@@ -1,5 +1,11 @@
 
 /* General Styles */
+
+#main-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
 body {
   background-color: lightgray;
   margin: 0;
@@ -13,6 +19,7 @@ header {
   padding: 20px;
   background-color: #f1f1f1;
   position: relative;
+  font-family: 'Roboto', sans-serif;
 }
 
 @media screen and (max-width: 991px) {
@@ -71,6 +78,7 @@ margin-bottom: 0;
   color: #f7f5f5;
   display: block;
   transition: 0.3s;
+  font-family: 'Lato', sans-serif;
 }
 
 .menu-slide a:hover {
@@ -95,7 +103,7 @@ main {
 .section {
   flex: 1;
   padding: 20px;
-  background-color: rgba(188, 190, 197, 0.2);
+  background-color: lightgray(188, 190, 197, 0.2);
 }
 
 .section:not(:last-child) {
@@ -119,35 +127,38 @@ main {
   object-fit: cover;
 }
 
-/* Custom styles for block options */
-.block-options {
-  display: flex;
-  justify-content: center;
+
+@media screen and (max-width: 991px) {
+    .hamburger {
+      display: block;
+    }
+  }
   
-}
-
+  /* Button Blocks Container & Items */
+.block-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2em;
+ }
+  
 .block-option {
-    flex: 0 0 30%; /* Update this line */
-    max-width: 30%; /* Update this line */
-    padding: 20px;
-    background-color: rgba(114, 117, 131, 0.6);
+    margin: 1em;
+    padding: 2em;
     text-align: center;
-    border-radius: 15px;
+    color: white; /* White text */
+    background-color: #f0eded; /* Darker gray */
+    border-radius: 15px; /* Rounded edges */
+    width: 350px; /* Set width */
+    font-family: 'Poppins', sans-serif; 
 }
-
-.block-option:not(:last-child) {
-  margin-right: 20px;
-}
-
-.block-option a {
-  display: block;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-  padding: 10px 0;
-}
-
-
+  
+  /* Add a new media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .block-options {
+      flex-direction: column;
+    }
+  }
 /* Responsive styles for mobile devices */
 @media screen and (max-width: 768px) {
   header {
