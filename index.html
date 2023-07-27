@@ -6,10 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jun's Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-
+  <div id="main-container">
   <header>
     <h1>Jun's Portfolio</h1>
     <div class="hamburger" onclick="openMenu()">
@@ -67,6 +73,24 @@
   
   <!-- Add further sections here -->
   <script src="scripts.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Add smooth page transition JavaScript handler
+    $(document).ready(function () {
+      $('#main-container').css('opacity', 1);
+
+      $('.transitions').click(function (event) {
+        event.preventDefault();
+        var link = $(this).attr('href');
+
+        $('#main-container').css('opacity', 0);
+
+        setTimeout(function () {
+          window.location.href = link;
+        }, 500);
+      });
+    });
+  </script>
 </body>
 
 </html>
