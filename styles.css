@@ -1,11 +1,15 @@
 
 /* General Styles */
 
+a.title-link {
+    color: inherit;
+    text-decoration: none;
+  }
 #main-container {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
   }
-  
+
 body {
   background-color: lightgray;
   margin: 0;
