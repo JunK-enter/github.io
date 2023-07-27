@@ -14,10 +14,19 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<style>
+  .about-text {
+      line-height: 2.0; /* You can adjust the value to your preference */
+  }
+</style>
+
+
 <body>
   <div id="main-container">
   <header>
-    <h1>Jun's Portfolio</h1>
+    <a href="index.html" class="title-link">
+      <h1>Jun's Portfolio</h1>
+    </a>
     <div class="hamburger" onclick="openMenu()">
       <span></span>
       <span></span>
@@ -40,8 +49,8 @@
 
   <main>
     <div class="section">
-      <h2>About me</h2>
-      <p>
+      <h2>About Me</h2>
+      <p class="about-text">
         ​Hello! I am currently a senior student majoring in Computer Engineering at UCI (University of California, Irvine). I have learned various programming languages, with C++ and Python as my foundation, and become deeply immersed in AI technology through machine learning. As time passes, I realize the endless possibilities and advancements in AI technology, which has led me to develop a strong passion for the field. My goal is to grow into a professional who contributes to the progress of AI technology, and I hope to continue learning and researching this field with unwavering efforts for personal and professional growth.
       </p>
     </div>
