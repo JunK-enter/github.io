@@ -1,54 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-text {
+            line-height: 2.0; /* You can adjust the value to your preference */
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 30px;
+            height: 4px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+         /* Font recommendations */
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+          font-family: 'Lato', sans-serif;
+        }
+        
+        a {
+          font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
+    <div id="main-container">
+      <!-- Add Jun's portfolio and menu bar -->
+      <header>
+          <div class="header-left">
+              <div class="hamburger" onclick="toggleMenu()">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+              </div>
+              <a href="index.html" class="title-link">
+                <h1>Jun's Portfolio</h1>
+              </a>
+          </div>
+          <nav class="menu-slide" id="menuSlide">
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+              <ul class="nav-links">
+                  <a href="index.html" class="transitions">Home</a>
+                  <div class="dropdown">
+                    <a href="javascript:void(0)">Contact</a>
+                    <div class="dropdown-content">
+                      <a href="https://www.instagram.com/jmuinr6/?hl=ko" target="_blank">Instagram</a>
+                      <a href="mailto:junkim621edu@gmail.com">Email</a>
+                    </div>
+                  </div>
+              </ul>
+          </nav>
+      </header>
 
-  <header>
-    <h1>Jun's Portfolio</h1>
-    <div class="hamburger" onclick="openMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <main>
+        <div class="section section-image">
+            <img src="https://imgur.com/a/VLWN1kG.jpg" width="100%">
+        </div>
+        <div class="section">
+            <h2>About Me</h2>
+            <p class="about-text">
+                Hello! My name is Jun, and I am an international student from Korea, where I was born and raised. Before I chose Computer Science as major, I have been interested about the coding world, but I have faced many challenges in mastering the complexities of programming. Determined to succeed, I have created this web portfolio to showcase my skills and dive deeper into the world of programming. Throughout my educational journey, I started by earning an Associate degree in Computer Science, Math, and Physics at College of the Canyons. It was here that I developed a strong foundation. I am now pursuing a Bachelor's degree in Computer Science at the prestigious Donald Bren School of Info & Computer Sciences at the University of California, Irvine. Aside from academics, I have gained valuable experience through various roles, including serving as a teaching assistant at Fermat Math Academy, where I mentored and instructed students ranging from preschool to secondary school. Additionally, I have proudly served in the Republic of Korea Army as an artilleryman, obtaining the rank of sergeant and the position of Squad Leader. These experiences have equipped me with essential leadership skills, resilience, and adaptability. Previously, I worked as a Mathematics and Computer Science tutor for College of the Canyons, honing my teaching abilities and helping fellow students excel in their coursework. Moreover, I have also volunteered for the American Red Cross Club, cooperating with local chapters and supporting the community in various capacities. As I continue to build my web portfolio and enhance my programming expertise, I am excited to share my experiences and successes with others, eager to make a positive impact in the world of technology while remaining keen to learn and grow as a programmer.            </p>
+          </div>
+          
+      </main>
     </div>
-  </header>
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("menuSlide");
+          if (menu.style.width === "250px") {
+            menu.style.width = "0";
+          } else {
+            menu.style.width = "250px";
+          }
+        }
 
-  <nav id="menuSlide" class="menu-slide">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
-    <a href="index.html" onclick="closeMenu()">Home</a>
-    <a href="about.html" onclick="closeMenu()">About</a>
-    <div class="dropdown">
-      <a href="javascript:void(0)">Contact</a>
-      <div class="dropdown-content">
-        <a href="https://www.instagram.com/jmuinr6/?hl=ko" target="_blank">Instagram</a>
-        <a href="mailto:your.email@example.com">Email</a>
-      </div>
-    </div>
-  </nav>
+        // Add smooth page transition JavaScript handler
+        $(document).ready(function () {
+          $('#main-container').css('opacity', 1);
 
-  
-  <main>
-    <div class="about-container">
-      <div class="about-image">
-        <img src="C:\Users\junki\OneDrive\Desktop\웹페이지.jpg" alt="Your description">
-      </div>
-      <div class="about-text">
-        <p>
-          Your paragraph content goes here. This is a sample paragraph that describes
-          your background, experience, and any other relevant information about
-          yourself.
-        </p>
-      </div>
-    </div>
-  </main>
-  
-  <script src="scripts.js"></script>
+          $('.transitions').click(function (event) {
+            event.preventDefault();
+            var link = $(this).attr('href');
+
+            $('#main-container').css('opacity', 0);
+
+            setTimeout(function () {
+              window.location.href = link;
+            }, 500);
+          });
+        });
+    </script>
 </body>
-
 </html>
