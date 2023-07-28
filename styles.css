@@ -267,3 +267,54 @@ display: block;
  .info strong {
     font-weight: bold;
 }
+
+
+
+
+.pagination-button {
+  background-color: #3399ff; /* Change this to your preferred button color */
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds shadow around the button */
+  transition: background-color 0.2s; /* Adjust the '0.2s' value to change the duration of the hover transition */
+}
+
+.pagination-button:hover {
+  background-color: #0059b3; /* Change this to your preferred hover color */
+}
+
+.pagination-button[disabled] {
+  background-color: #cccccc; /* Change this to your preferred disabled button color */
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.formatted-list {
+  margin-left: 2em;
+}
+
+.formatted-list dt {
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.visitor-count {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visitor-count p {
+  margin: 0;
+}
