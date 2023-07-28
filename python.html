@@ -6,8 +6,30 @@
     <title>Project: PYTHON</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        .item-name {
+          font-weight: bold;
+          font-style: italic;
+        }
+
+        ul li {
+          font-weight: bold;
+        }
+  
+
+        body {
+          background-color: #f0f0f0;
+        }
+
+        header {
+          background-color: #faf6f6;
+        }
+
+        nav ul li a {
+          color: #d30f0f;
+        }
         p {
             margin: 20px 200px;
+            margin-bottom: 1em;
         }
         .paragraph-margin {
             margin: 20px 200px;
@@ -17,6 +39,11 @@
         .paragraph-margin {
             margin: 20px 30px; /* reduced margins for mobile devices */
             }
+        }
+        
+        img {
+          max-width: 100%; /* Restrict width, but allow images to scale down if needed */
+          height: auto; /* Maintain original aspect ratio of images */
         }
 
         .title-container {
@@ -31,7 +58,7 @@
             padding: 0;
         }
         .about-text {
-            line-height: 2.0; /* You can adjust the value to your preference */
+            line-height: 3.0; /* You can adjust the value to your preference */
         }
         /* Add a class for styling the Python icon */
         .python-icon {
@@ -159,6 +186,7 @@
                             </p>
                         </article>
             </section>
+            
             <section id="chapter2" class="chapter">
                         <h2 class="paragraph-margin">Beginning Setup</h2>
                         <article>
@@ -178,33 +206,105 @@
 
 
             <section id="chapter3" class="chapter">
-                        <h2 class="paragraph-margin">Chapter 3</h2>
+                        <h2 class="paragraph-margin">Chapter 1: Data Types and Variables</h2>
                         <article>
-                        <!-- Your chapter content here -->
-                        <p>Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.</p>
+                          <img class="about-image paragraph-margin" src="https://media.geeksforgeeks.org/wp-content/uploads/20191023173512/Python-data-structure.jpg" alt="Your image description">
+
+                          <ol class="paragraph-margin about-text item-name">
+                            <li>
+                                숫자형(Numeric types): 중요특징: Not Iterable = 반복이 불가능하다(loop에 못돌린다는 의미)
+                                <ul>
+                                    <li>Integer(정수형): 1, 30, 101와 같이 소수점 없는 숫자 ex) a = 1, b = 77</li>
+                                    <li>Float(실수형): 소수점 있는 숫자들 1.43, 3.141592, 0.111111. They can represent decimals and are useful for various mathematical operations. ex) PI = 3.14, RTWO = 1.414</li>
+                                    <li>Complex(복소수형): 수학시간에 배우는 실수와 허수부분을 가지는 복소수 표현. 일반적으로 a + b j 형태로 나타낼수있다. 사실 나도 아직까지 코딩에서 써본적이 없다.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Bool: True or False를 값으로 가지는 데이터타입(0은 보통 Fasle로 간주, 나머지 0이 아닌 수나 문자 모두 True) ex) Name = True 
+                            </li> 
+                            <li>
+                                Sequence types: 중요특징: Iterable = 반복 가능하다 (loop에 돌릴 수 있다는 의미)
+                                <ul>
+                                    <li>
+                                      String " " : 문자열(String)은 일련의 문자들로 구성된 불변하는 데이터 타입으로, 파이썬에서 작은따옴표(') 또는 큰따옴표(")로 둘러싸인 텍스트. 아주아주 많이 쓰이며 이 자료형은 Imutable이다. ex) my_str = "Hello World" 
+                                    </li>
+                                    <li>List [ ] :리스트는 순서가 있는 변경 가능한 요소들의 모음으로, 여러 데이터 타입을 포함할 수 있는 파이썬의 자료형. 엄청 자주 쓰이며 Mutable의 대표주자. append, insert, remove 등등 함수로 변형가능. ex) my_list = [1, 2.22, 3, "a", 'b', False]</li>
+                                    <li>Tuple ( ) : 튜플은 순서가 있으며 변경 불가능한 요소들의 모음으로, 여러 데이터 타입을 포함할 수 있는 파이썬의 자료형. 리스트와 비슷해보이지만 튜플은 Immutable의 대표주자. 한번 생성 후 변경이 절대로 NO. ex) my_tuple = (1,2)</li>
+                                </ul>
+                            </li>
+                            <li>
+                              Set { }: 세트(Set)는 순서 없고 중복된 요소를 허용하지 않는, 변경 가능한 파이썬 자료형. 수학의 집합을 생각하면 된다. {1, 1, 1, 2, 3} 이나 {1, 2, 2, 2, 3}이나 중복된 값를 지우고 똑같이 {1, 2, 3}이 된다.
+                            </li> 
+                            <li>
+                              Dictionaries {Key : Value} : 딕셔너리(Dictionary)는 키(Key)와 값(Value) 짝으로 이루어진, 순서가 없는 변경 가능한 파이썬 자료형. 키를 통해 쉽게 값에 접근할 수 있어 데이터 관리에 유용한 구조. 키와 값이 짝으로 되어있는 것을 우리는 매핑(mapping)이라고 한다. 공부하면서 가장 어려웠던 데이터형. 자주 같이 쓰이는 함수로 values(), keys(), enumarate() 등등 있다.
+                              ex) My_dict = {"Name": "Jun", "Age" : 25, "Married" :False} => 딕셔너리이름[키]로 값을 찾을 수 있다.  
+                            </li>
+          
+                        </ol>
+
+                        <ul class="paragraph-margin about-text item-name">
+                          <li>Assigning values to variables and basic arithmetic operations - 파이썬 속 사칙연산</li>
+                          <ul>
+                            <li>Addtion(+): a = 3, b = 5, c = a + b => c? = 8</li>
+                            <li>Subtraction(-): x = 10, y = 3.4, z = x - y => z? = 6.6</li>
+                            <li>Multiplication(*): x = "HI", y = 3, z = x * y => z? = "HIHIHI"</li>
+                            <li>Division(/): a = 10, b = 5.0, c = a / b => c? = 2.0</li>
+                            <li>Floor division(//): a = 10, b = 3, c = a // b => c? = 3</li>
+                            <li>Modulus(%):  a = 10, b = 3, c = a % b => c? = 1</li>
+                            <li>Exponentiation(**):  a = 2, b = 4, c = a ** b => c? = 16</li>
+                            <p>(추가사항) Multiplication에서는 숫자끼리 곱셈도 가능하지만 예시와 같이 string형과 숫자형 사이의 곱셈도 가능하다</p>
+                            <p>(추가사항) Division에서 0으로 나누었을 때 파이썬은 ZeroDivisionError라는 오류메세지를 띄운다</p>
+                          </ul>
+                        </ul>
+
+                        <ul class="paragraph-margin about-text item-name">
+                          <li>Frequently Used Operators - 코딩할때 많이 쓰이는 기호들</li>
+                          <ul>
+                            <li> x += 1 => x = x + 1 (use in for loop)</li>
+                            <li> x -= 3 => x = x - 3</li>
+                            <li> == : x == y Equal =기호 하나만 사용하면 값을 지정 두개 사용하면 양변이 같은지 boolean으로 대답</li>
+                            <li> != : 코딩에서 !는 아니다를 의미한다 ==의 반대</li>
+                            <li> >, <, >=, <= : 양변 비교하는 기호들. 모두 True or False로 return함</li>
+                            <li> and : Returns True if both statements are true => x < 5 and  x < 10</li>
+                            <li> or : Returns True if one of the statements is true =>	x < 5 or x < 4 </li>
+                            <li> not : Reverse the result, returns False if the result is true =>	not(x < 5 and x < 10)</li>
+                            <li> is : Returns true if both variables are the same object => x is y</li>        
+                            <li> in : Returns True if a sequence with the specified value is present in the object. 리스트나 딕셔너리 안에 원하는 값이 있는지 없는지 확인할때 자주 사용됨 => x in y</li>                    
+                          </ul>
+                        </ul>
+                          
+                          
                         </article>
             </section>
 
                     
             <section id="chapter4" class="chapter">
-                        <h2 class="paragraph-margin">Chapter 4</h2>
+                        <h2 class="paragraph-margin">Chapter 2: Output/Input/Comments</h2>
                         <article>
-                        <!-- Your chapter content here -->
-                        <p>Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.</p>
+                          <img class="about-image paragraph-margin" src="https://img.freepik.com/free-vector/illustration-computer-system_53876-9179.jpg?size=626&ext=jpg&ga=GA1.1.417334544.1690438728&semt=ais" alt="Your image description">
+                        <p>
+                          Using comments to explain and document code
+                          Overview of the print() function for displaying output
+                          Formatting output with string interpolation (f-strings, format() method, etc.)
+                          Introduction to the input() function for gathering user input
+                          Example program that demonstrates using input to interact with users
+                        </p>
                         </article>
             </section>
 
             <section id="chapter5" class="chapter">
-                <h2 class="paragraph-margin">Chapter 5</h2>
+                <h2 class="paragraph-margin">Chapter 3</h2>
                 <article>
                 <!-- Your chapter content here -->
-                <p>Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.</p>
+                <p>
+                  Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.
+                </p>
                 </article>
             </section>
 
             
             <section id="chapter6" class="chapter">
-                <h2 class="paragraph-margin">Chapter 6</h2>
+                <h2 class="paragraph-margin">Chapter 4</h2>
                 <article>
                 <!-- Your chapter content here -->
                 <p>Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.</p>
@@ -212,7 +312,7 @@
             </section>
 
             <section id="chapter7" class="chapter">
-                    <h2 class="paragraph-margin">Chapter 7</h2>
+                    <h2 class="paragraph-margin">Chapter 5</h2>
                     <article>
                     <!-- Your chapter content here -->
                     <p>Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.</p>
@@ -221,21 +321,37 @@
 
     
             <section id="chapter8" class="chapter">
-                    <h2 class="paragraph-margin">Chapter 8</h2>
+                    <h2 class="paragraph-margin">Chapter 6</h2>
                     <article>
                     <!-- Your chapter content here -->
                     <p>Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.</p>
                     </article>
             </section>
 
+            <section id="chapter9" class="chapter">
+              <h2 class="paragraph-margin">Chapter 7</h2>
+              <article>
+              <!-- Your chapter content here -->
+              <p>Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.</p>
+              </article>
+            </section>
+
+
+            <section id="chapter10" class="chapter">
+              <h2 class="paragraph-margin">Chapter 8</h2>
+              <article>
+              <!-- Your chapter content here -->
+              <p>Proin ultricies risus vitae elit volutpat convallis. Pellentesque ornare urna dolor, id feugiat augue posuere nec.</p>
+              </article>
+            </section>
 
         </div>
         
      
         <div id="pagination">
-            <button onclick="prevPage()" id="prev">Previous</button>
-            <span id="currentPage">1</span>/<span id="totalPages">1</span>
-            <button onclick="nextPage()" id="next">Next</button>
+          <button onclick="prevPage()" id="prev" class="pagination-button">Previous</button>
+          <span id="currentPage">1</span>/<span id="totalPages">1</span>
+          <button onclick="nextPage()" id="next" class="pagination-button">Next</button>
         </div>
 
 
