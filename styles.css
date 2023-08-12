@@ -26,7 +26,7 @@ header {
   font-family: 'Roboto', sans-serif;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 768px) {
     .hamburger {
       display: block;
     }
@@ -155,8 +155,19 @@ main {
     border-radius: 15px; /* Rounded edges */
     width: 350px; /* Set width */
     font-family: 'Poppins', sans-serif; 
+    position: relative; 
 }
-  
+.sub-options {
+  display: none; /* 초기 상태에서 서브메뉴 숨김 */
+  position: absolute; /* 서브메뉴 위치 조정 */
+  left: 0;
+  top: 100%; /* CS 블록 하단에 위치 */
+  /* 필요한 추가 스타일 */
+}
+
+.block-option:hover .sub-options {
+  display: block; /* 마우스 오버 시 서브메뉴 표시 */
+}
   /* Add a new media query for smaller screens */
 @media screen and (max-width: 768px) {
     .block-options {
@@ -317,4 +328,26 @@ header {
 
 .visitor-count p {
   margin: 0;
+}
+
+.code-examples-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  max-width: 100%;
+}
+.code-examples {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+}
+.code-example {
+  margin-bottom: 1rem;
+}
+.code-example code {
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: monospace;
 }
