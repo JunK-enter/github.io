@@ -45,6 +45,50 @@
         a {
           font-family: 'Poppins', sans-serif;
         }
+        
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .ML-icon {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+        
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem; /* Adjust this value for more or less space between the title and chapters container */
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+      
+        .page-number {
+            cursor: pointer;
+            padding: 5px;
+            margin: 0 2px;
+            color: blue;
+        }
+
+        .page-number:hover {
+            text-decoration: underline;
+        }
+        #pagination {
+            position: fixed;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,15 +119,164 @@
                   <a href="#">Projects</a>
                   </ul>
           </nav>
+
+          
+
+
       </header>
 
-      <main>
+      <main class="main-container">
+        <div class="title-container">
+            <img class="ML-icon" src="data:image/png;base64,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" alt="ML">
+            <h1>Machine Learning 뿌시기</h1>
+        </div>
 
-          <h1><br><strong>Machine Learning 뿌시기</strong></h1>
-          <!-- Add your ML content here -->
+        <div class="chaptersContainer">
+
+          
+          <div class="page" id="page1">
+            <div class="chapter" id="chapter1">
+              <!-- 챕터 1 컨텐츠 -->
+              <p>aaaaaaaaa</p>
+            </div>
+            <div class="chapter" id="chapter2">
+              <!-- 챕터 2 컨텐츠 -->
+              <p>bbbbbbbbbb</p>
+            </div>
+          </div>
+
+          <div class="page" id="page2" style="display:none;">
+              <div class="chapter" id="chapter3">
+                <!-- 챕터 3 컨텐츠 -->
+                <p>dddddddddd</p>
+              </div>
+              <div class="chapter" id="chapter4">
+                <!-- 챕터 4 컨텐츠 -->
+                <p>ccccccccc</p>
+              </div>
+          </div>
+          
+          <div class="page" id="page3" style="display:none;">
+            <div class="chapter" id="chapter3">
+              <!-- 챕터 3 컨텐츠 -->
+              <p>eeeeeeeeeeee</p>
+            </div>
+            <div class="chapter" id="chapter4">
+              <!-- 챕터 4 컨텐츠 -->
+              <p>fffffffffffff</p>
+            </div>
+          </div>
+
+          <div class="page" id="page4" style="display:none;">
+            <div class="chapter" id="chapter3">
+              <!-- 챕터 3 컨텐츠 -->
+              <p>ggggggggggggg</p>
+            </div>
+            <div class="chapter" id="chapter4">
+              <!-- 챕터 4 컨텐츠 -->
+              <p>hhhhhhhhhhh</p>
+            </div>
+          </div>
+
+          <div class="page" id="page5" style="display:none;">
+            <div class="chapter" id="chapter3">
+              <!-- 챕터 3 컨텐츠 -->
+              <p>iiiiiiiiiiiiiiiii</p>
+            </div>
+            <div class="chapter" id="chapter4">
+              <!-- 챕터 4 컨텐츠 -->
+              <p>jjjjjjjjjjjjjjj</p>
+            </div>
+          </div>
+          
+          <div class="page" id="page6" style="display:none;">
+            <div class="chapter" id="chapter3">
+              <!-- 챕터 3 컨텐츠 -->
+              <p>kkkkkkkkkkkkkkkk</p>
+            </div>
+            <div class="chapter" id="chapter4">
+              <!-- 챕터 4 컨텐츠 -->
+              <p>dddsaasdfasdf</p>
+            </div>
+          </div>
+          <!-- 나머지 페이지 및 챕터 추가 -->
+        </div>
       </main>
+        
+        
+        <!-- 페이지네이션 수정 -->
+      <div id="pagination">
+        <button id="prev" class="pagination-button" onclick="prevPage()">Previous</button>
+        <span class="page-numbers">
+            <span class="page-number" onclick="goToPage(1)">1</span>
+            <span class="page-number" onclick="goToPage(2)">2</span>
+            <span class="page-number" onclick="goToPage(3)">3</span>
+            <span class="page-number" onclick="goToPage(4)">4</span>
+            <span class="page-number" onclick="goToPage(5)">5</span>
+            <span class="page-number" onclick="goToPage(6)">6</span>
+        </span>
+        <button onclick="nextPage()" id="next" class="pagination-button">Next</button>
     </div>
+
+
+    </div>
+
+
+
     <script>
+
+const pages = [
+          "page1",
+          "page2",
+          "page3",
+          "page4",
+          "page5",
+          "page6",
+          // 나머지 페이지 ID 추가
+        ];
+
+        function goToPage(pageNumber) {
+            pages.forEach((pageId, index) => {
+                if (index + 1 === pageNumber) {
+                    document.getElementById(pageId).style.display = 'block';
+                } else {
+                    document.getElementById(pageId).style.display = 'none';
+                }
+            });
+        }
+
+        function prevPage() {
+            let currentPageNumber = getCurrentPageNumber();
+            if (currentPageNumber > 1) {
+                goToPage(currentPageNumber - 1);
+            }
+        }
+
+        function nextPage() {
+            let currentPageNumber = getCurrentPageNumber();
+            if (currentPageNumber < pages.length) {
+                goToPage(currentPageNumber + 1);
+            }
+        }
+
+        function getCurrentPageNumber() {
+            let currentPageNumber = 0;
+            pages.forEach((pageId, index) => {
+                if (document.getElementById(pageId).style.display == 'block') {
+                    currentPageNumber = index + 1;
+                }
+            });
+            return currentPageNumber;
+        }
+
+        // 페이지 로드시 처음 페이지 보여주기
+        document.addEventListener("DOMContentLoaded", function () {
+            goToPage(1);
+        });
+
+
+
+
         function toggleMenu() {
           var menu = document.getElementById("menuSlide");
           if (menu.style.width === "250px") {
