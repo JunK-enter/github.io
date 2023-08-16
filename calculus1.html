@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus1</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 30px;
+            height: 4px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+         /* Font recommendations */
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+          font-family: 'Lato', sans-serif;
+        }
+        
+        a {
+          font-family: 'Poppins', sans-serif;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="main-container">
+      <!-- Add Jun's portfolio and menu bar -->
+      <header>
+          <div class="header-left">
+              <div class="hamburger" onclick="toggleMenu()">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+              </div>
+              <a href="index.html" class="title-link">
+                <h1>Jun's Portfolio</h1>
+              </a>
+          </div>
+          <nav class="menu-slide" id="menuSlide">
+              <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+              <ul class="nav-links">
+                  <a href="https://junkim621.nicepage.io/" class="transitions">Home</a>
+                  <a href="#">Projects</a>
+                  </ul>
+          </nav>
+      </header>
+
+      <main>
+
+          <h1><br><strong>Calculus 1</strong></h1>
+          <!-- Add your ML content here -->
+      </main>
+    </div>
+    <script>
+        function toggleMenu() {
+          var menu = document.getElementById("menuSlide");
+          if (menu.style.width === "250px") {
+            menu.style.width = "0";
+          } else {
+            menu.style.width = "250px";
+          }
+        }
+
+        // Add smooth page transition JavaScript handler
+        $(document).ready(function () {
+          $('#main-container').css('opacity', 1);
+
+          $('.transitions').click(function (event) {
+            event.preventDefault();
+            var link = $(this).attr('href');
+
+            $('#main-container').css('opacity', 0);
+
+            setTimeout(function () {
+              window.location.href = link;
+            }, 500);
+          });
+        });
+    </script>
+</body>
+</html>
